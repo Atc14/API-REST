@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="steamWebApiClient" class="com.ibasco.agql.protocols.valve.steam.webapi.SteamWebApiClient"/>
+
+    <bean id="steamStorefront" class="com.ibasco.agql.protocols.valve.steam.webapi.interfaces.SteamStorefront">
+        <constructor-arg ref="steamWebApiClient"/>
+    </bean>
+
+    <bean id="steamNews" class="com.ibasco.agql.protocols.valve.steam.webapi.interfaces.SteamNews">
+        <constructor-arg ref="steamWebApiClient"/>
+    </bean>
+</beans>
